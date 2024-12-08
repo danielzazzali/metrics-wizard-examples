@@ -33,6 +33,18 @@ function myFunction() {
     new MyClass3().anotherMethod();
 }
 
+function myFunctionB() {
+    console.log('Declared function');
+    new MyClass3().anotherMethod();
+}
+
+function myFunctionA() {
+    console.log('Declared function');
+    new MyClass3().anotherMethod();
+}
+
+
+
 const myFunctionExpression = function() {
     console.log('Function expression');
     myFunction();
