@@ -1,4 +1,4 @@
-import { calculateMetrics } from '../metrics/index.js';
+import { calculateMetrics } from 'metrics-wizard';
 
 (async () => {
     const results = await calculateMetrics({
