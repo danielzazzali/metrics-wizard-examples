@@ -2,5 +2,8 @@
   "type": "module",
   "dependencies": {
     "metrics-wizard": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2"
   }
 }

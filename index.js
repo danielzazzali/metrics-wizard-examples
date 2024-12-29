@@ -14,4 +14,9 @@ results.forEach(result => {
     console.log('\x1b[32m%s\x1b[0m', `Version: ${result.version}`);
 
     console.log(JSON.stringify(result.result, null, 2));
+
+    if (result.unresolved) {
+        console.log('\x1b[31m%s\x1b[0m', "Unresolved imports:");
+        console.log(JSON.stringify(result.unresolved, null, 2));
+    }
 });
