@@ -1,12 +1,11 @@
-import { calculateMetrics } from '../metrics/index.js';
+import { calculateMetrics } from 'metrics-wizard';
 
-async function run() {
+(async () => {
+    const results = await calculateMetrics({
+        codePath: './src',
+        //customMetricsPath: './metrics',
+        useDefaultMetrics: true
+    });
 
-    const codePath = "./src";
-    const useDefaultMetrics = true;
-
-    const results = await calculateMetrics({codePath, useDefaultMetrics});
-    console.log(JSON.stringify(results, null, 2));
-}
-
-await run()
+    console.log(results);
+})();
