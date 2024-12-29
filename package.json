@@ -1,6 +1,6 @@
 {
   "type": "module",
   "dependencies": {
-    "metrics-wizard": "0.0.3"
+    "metrics-wizard": "latest"
   }
 }
