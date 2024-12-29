@@ -7,5 +7,9 @@ import { calculateMetrics } from 'metrics-wizard';
         useDefaultMetrics: true
     });
 
-    console.log(results);
+    results.forEach(result => {
+        console.log('------------------------------------')
+        console.log(result.metricName);
+        console.log(JSON.stringify(result, null, 2));
+    });
 })();
