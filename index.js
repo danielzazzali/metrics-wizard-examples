@@ -1,22 +1,22 @@
-import { calculateMetrics } from 'metrics-wizard';
+import { calculateMetrics } from '../metrics/index.js';
 
 
-const results = await calculateMetrics({
-    codePath: './src',
-    customMetricsPath: './metrics',
+const metrics = await calculateMetrics({
+    codePath: '../metrics',
+    //customMetricsPath: './metrics',
     useDefaultMetrics: true
 });
 
-results.forEach(result => {
+metrics.forEach(metric => {
     console.log('\x1b[36m%s\x1b[0m', "-".repeat(80));
-    console.log('\x1b[32m%s\x1b[0m', result.metricName);
-    console.log('\x1b[32m%s\x1b[0m', result.description);
-    console.log('\x1b[32m%s\x1b[0m', `Version: ${result.version}`);
+    console.log('\x1b[32m%s\x1b[0m', metric.metricName);
+    console.log('\x1b[32m%s\x1b[0m', metric.description);
+    console.log('\x1b[32m%s\x1b[0m', `Version: ${metric.version}`);
 
-    console.log(JSON.stringify(result.result, null, 2));
+    console.log(JSON.stringify(metric.result, null, 2));
 
-    if (result.unresolved) {
+    if (metric.unresolved) {
         console.log('\x1b[31m%s\x1b[0m', "Unresolved imports:");
-        console.log(JSON.stringify(result.unresolved, null, 2));
+        console.log(JSON.stringify(metric.unresolved, null, 2));
     }
 });
