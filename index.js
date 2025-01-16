@@ -1,8 +1,7 @@
-import { calculateMetrics } from '../metrics/index.js';
-
+import { calculateMetrics } from 'metrics-wizard';
 
 const metrics = await calculateMetrics({
-    codePath: '../metrics',
+    codePath: './src',
     //customMetricsPath: './metrics',
     useDefaultMetrics: true
 });
