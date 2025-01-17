@@ -41,9 +41,9 @@ const asyncArrowFunction = async () => {
     console.log('This is an async arrow function');
 };
 
-const methodName = 'computedMethod';
-const objWithComputedMethod = {
-    [methodName]() {
+const functionName = 'computedMethod';
+const objWithComputedFunction = {
+    [functionName]() {
         console.log('This is a computed method');
     }
 };
@@ -71,9 +71,49 @@ const handler = {
 const proxy = new Proxy({}, handler);
 proxy.get('dynamicMethod')();
 
-// (should be excluded by the metric)
 class MyClass {
-    classMethod() {
-        console.log('This is a class method');
+    constructor(name) {
+        this.name = name;
     }
+
+    instanceMethod() {
+        return `Hello, ${this.name}!`;
+    }
+
+    static staticMethod() {
+        return 'This is a static method.';
+    }
+
+    async asyncMethod() {
+        const data = await fetch('https://api.example.com/data');
+        return data.json();
+    }
+
+    get value() {
+        return this._value; // Getter
+    }
+
+    set value(newValue) {
+        this._value = newValue; // Setter
+    }
+
+    #privateMethod() {
+        return 'This is private!';
+    }
+
+    publicMethod() {
+        return this.#privateMethod();
+    }
+
+    [methodName]() {
+        return 'This is a dynamically named method.';
+    }
+
+    expressedMethod = function () {
+        return 'This is a function expression.';
+    };
+
+    arrowMethod = () => {
+        return `Arrow function: ${this.constructor.name}`;
+    };
 }

@@ -1,9 +1,7 @@
 import { calculateMetrics } from 'metrics-wizard';
 
 const metrics = await calculateMetrics({
-    codePath: './src',
-    //customMetricsPath: './metrics',
-    useDefaultMetrics: true
+    codePath: 'src/',
 });
 
 metrics.forEach(metric => {

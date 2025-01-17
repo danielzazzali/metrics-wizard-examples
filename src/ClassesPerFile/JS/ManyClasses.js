@@ -1,31 +1,13 @@
-class FirstClass_Declared {
-    constructor() {
-        this.name = 'FirstClass_Declared';
-    }
-}
+class ClassDeclared {}
 
-class SecondClass_Declared {
-    constructor() {
-        this.name = 'SecondClass_Declared';
-    }
-}
-
-const ThirdClass_Expressed = class {
-    constructor() {
-        this.name = 'ThirdClass_Expressed';
-    }
-}
+const ClassExpressed = class {}
 
 const instance = new (class {
-    constructor() {
-        this.name = 'AnonymousClass';
-    }
+    constructor() {}
 })();
 
 function createClass() {
     return class {
-        constructor() {
-            this.name = 'FunctionClass';
-        }
+        constructor() {}
     };
 }
