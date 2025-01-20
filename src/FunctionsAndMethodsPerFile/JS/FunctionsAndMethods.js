@@ -92,7 +92,6 @@ const proxy = new Proxy({}, handler);
 proxy.get('dynamicMethod')();
 
 
-/*
 class MyClass {
     constructor(arg) {
         this.arg = arg;
@@ -130,7 +129,7 @@ class MyClass {
         return arg;
     }
 
-    expressedMethod = function (arg) {
+    static expressedMethod = async function* (arg) {
         return arg;
     };
 
@@ -138,4 +137,3 @@ class MyClass {
         return arg;
     };
 }
-*/

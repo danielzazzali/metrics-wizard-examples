@@ -93,21 +93,23 @@ const proxy = new Proxy({}, handler);
 proxy.get('dynamicMethod')();
 
 
-/*
+const methodName = 'hi'
+
 class MyClass {
-    constructor(arg) {
+    private arg: any;
+    constructor(arg: any) {
         this.arg = arg;
     }
 
-    instanceMethod(arg) {
+    instanceMethod(arg: any) {
         return arg;
     }
 
-    static staticMethod(arg) {
+    static staticMethod(arg: any) {
         return arg;
     }
 
-    async asyncMethod(arg) {
+    async asyncMethod(arg: any) {
         return arg;
     }
 
@@ -119,24 +121,23 @@ class MyClass {
         this.arg = arg;
     }
 
-    _privateMethod(arg) {
+    _privateMethod(arg: any) {
         return arg;
     }
 
-    publicMethod(arg) {
+    publicMethod(arg: any) {
         return this._privateMethod(arg);
     }
 
-    [methodName](arg) {
+    [methodName](arg: any) {
         return arg;
     }
 
-    expressedMethod = function (arg) {
+    static expressedMethod = async function* (arg: any) {
         return arg;
     };
 
-    arrowMethod = (arg) => {
+    arrowMethod = (arg: any) => {
         return arg;
     };
 }
-*/
